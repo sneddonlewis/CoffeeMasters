@@ -16,9 +16,11 @@ struct Offer: View {
             Text(title)
                 .padding()
                 .font(.headline)
+                .background(.cardBackground)
             Text(description)
                 .padding()
                 .font(.subheadline)
+                .background(.cardBackground)
         }
     }
 }
