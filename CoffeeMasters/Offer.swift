@@ -14,7 +14,11 @@ struct Offer: View {
     var body: some View {
         VStack {
             Text(title)
+                .padding()
+                .font(.headline)
             Text(description)
+                .padding()
+                .font(.subheadline)
         }
     }
 }
