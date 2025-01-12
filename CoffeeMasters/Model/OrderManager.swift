@@ -19,4 +19,11 @@ class OrderManager: ObservableObject {
             return item.0.id == product.id
         })
     }
+    
+    func total() -> Double {
+        return products.reduce(0.0) { (partialResult, pair) in
+            let (product, quantity) = pair
+            return partialResult + product.price * Double(quantity)
+        }
+    }
 }

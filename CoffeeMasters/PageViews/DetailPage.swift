@@ -12,6 +12,8 @@ struct DetailPage: View {
     
     @EnvironmentObject var orderManager: OrderManager
     
+    @Environment(\.dismiss) var dismiss
+    
     var product: Product
     
     var body: some View {
@@ -45,6 +47,7 @@ struct DetailPage: View {
             
             Button("Add \(quantity) to Cart") {
                 orderManager.add(product: product, quantity: quantity)
+                dismiss()
             }
                 .padding()
                 .frame(width: 250.0)
