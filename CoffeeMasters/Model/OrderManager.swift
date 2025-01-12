@@ -8,5 +8,5 @@
 import Foundation
 
 class OrderManager: ObservableObject {
-    
+    @Published var order: [(Product, Int)] = []
 }
