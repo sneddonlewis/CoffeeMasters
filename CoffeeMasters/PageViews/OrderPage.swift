@@ -62,7 +62,7 @@ struct OrderPage: View {
                                 }
                                     .padding()
                                     .frame(width: 250.0)
-                                    .background(Color("Alternative2"))
+                                    .background(Color("Alt2"))
                                     .foregroundColor(Color.black)
                                     .cornerRadius(25)
                                     
