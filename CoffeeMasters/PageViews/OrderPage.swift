@@ -25,7 +25,8 @@ struct OrderPage: View {
                     List {
                         Section("ITEMS") {
                             ForEach(orderManager.products, id:\.0.id) { item in
-                                OrderItem(item: item)
+//                                OrderItem(item: item)
+                                OrderItem()
                             }
                         }.listRowBackground(Color("Background"))
                                             
@@ -46,8 +47,8 @@ struct OrderPage: View {
                                 Spacer()
                                 Text("Total")
                                 Spacer()
-                                Text("$ \(orderManager.total(), specifier: "%.2f")")
-                                    .bold()
+//                                Text("$ \(orderManager.total(), specifier: "%.2f")")
+//                                    .bold()
                                 Spacer()
                             }
                         }.listRowBackground(Color.clear)
@@ -89,4 +90,5 @@ struct OrderPage: View {
 
 #Preview {
     OrderPage()
+        .environmentObject(OrderManager())
 }
