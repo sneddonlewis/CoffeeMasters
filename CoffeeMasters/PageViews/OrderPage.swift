@@ -25,8 +25,7 @@ struct OrderPage: View {
                     List {
                         Section("ITEMS") {
                             ForEach(orderManager.products, id:\.0.id) { item in
-//                                OrderItem(item: item)
-                                OrderItem()
+                                OrderItem(item: item)
                             }
                         }.listRowBackground(Color("Background"))
                                             
