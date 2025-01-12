@@ -9,7 +9,17 @@ import SwiftUI
 
 struct MenuPage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(0 ..< 5) { item in
+                    NavigationLink {
+                        DetailPage()
+                    } label: {
+                        ProductItem()
+                    }
+                }
+            }.navigationTitle("Products")
+        }
     }
 }
 
