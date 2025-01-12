@@ -10,24 +10,26 @@ import SwiftUI
 struct DetailPage: View {
     @State var quantity = 0
     
+    var product: Product
+    
     var body: some View {
         ScrollView {
-            Image("DummyImage")
+            AsyncImage(url: product.imageURL)
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
                 .padding(.top, 32)
-            Text("Product")
+            Text(product.name)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
                 .padding(24)
             HStack {
-                Text("$ 4.25 ea")
+                Text("\(product.price, specifier: "%.2f")")
                 Stepper(value: $quantity, in: 1...10) { }
             }
                 .frame(maxWidth: .infinity)
                 .padding(30)
                             
-            Text("Subtotal $4.25")
+            Text("Subtotal \(Double(quantity) * product.price, specifier: "%.2f")")
                 .bold()
                 .padding(12)
             
@@ -45,5 +47,5 @@ struct DetailPage: View {
 }
 
 #Preview {
-    DetailPage()
+    DetailPage(product: Product(id: 1, name: "Product", description: "description", price: 4.50, image: ""))
 }
