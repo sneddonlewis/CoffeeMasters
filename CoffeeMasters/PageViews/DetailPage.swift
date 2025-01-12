@@ -10,6 +10,8 @@ import SwiftUI
 struct DetailPage: View {
     @State var quantity = 0
     
+    @EnvironmentObject var orderManager: OrderManager
+    
     var product: Product
     
     var body: some View {
@@ -34,7 +36,7 @@ struct DetailPage: View {
                 .padding(12)
             
             Button("Add \(quantity) to Cart") {
-                //TODO
+                orderManager.add(product: product, quantity: quantity)
             }
                 .padding()
                 .frame(width: 250.0)
@@ -48,4 +50,5 @@ struct DetailPage: View {
 
 #Preview {
     DetailPage(product: Product(id: 1, name: "Product", description: "description", price: 4.50, image: ""))
+        .environmentObject(OrderManager())
 }
