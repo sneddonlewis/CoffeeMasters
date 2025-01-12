@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OffersPage: View {
+struct OfferPage: View {
     var body: some View {
         NavigationView {
             List {
@@ -19,5 +19,5 @@ struct OffersPage: View {
 }
 
 #Preview {
-    OffersPage()
+    OfferPage()
 }
