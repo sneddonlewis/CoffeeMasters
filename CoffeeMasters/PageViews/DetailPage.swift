@@ -20,10 +20,18 @@ struct DetailPage: View {
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
                 .padding(.top, 32)
+            
             Text(product.name)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
                 .padding(24)
+            
+            Text(product.description)
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.leading)
+                .padding(24)
+                .foregroundColor(Color("Primary"))
+            
             HStack {
                 Text("\(product.price, specifier: "%.2f")")
                 Stepper(value: $quantity, in: 1...10) { }
